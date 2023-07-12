@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Chat Page</title>
     <style>
@@ -9,12 +8,32 @@
             font-family: "Times New Roman", sans-serif;
         }
         
+        #header {
+            background-color: lightpink;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        #footer {
+            background-color: lightpink;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #chat-container {
+            display: flex;
+        }
+
         #chat {
             width: 400px;
             height: 300px;
             border: 1px solid black;
             overflow: auto;
             background-color: lightgreen;
+            flex-grow: 1;
+            margin-right: 10px;
         }
 
         #message {
@@ -29,15 +48,35 @@
             font-style: italic;
             font-size: 1.5em;
         }
+        
+        #image-container {
+            width: 200px;
+        }
+
+        #image {
+            width: 100%;
+        }
     </style>
 </head>
 
 <body>
-    <div id="chat">
+    <div id="header">
+        <h1>Мой чат</h1>
+    </div>
+    <hr>
+    <div id="chat-container">
+        <div id="chat"></div>
+        <div id="image-container">
+            <img id="image" src="https://cdn140.picsart.com/348052930051211.png?to=crop&type=webp&r=1456x1630&q=85" alt="Image">
+        </div>
     </div>
     <input type="text" id="username" placeholder="Username">
     <input type="text" id="message" placeholder="Message">
     <button onclick="sendMessage()">Send</button>
+    <hr>
+    <div id="footer">
+        <p>@2023@</p>
+    </div>
 
     <script>
         function sendMessage() {
@@ -55,5 +94,4 @@
         }
     </script>
 </body>
-
 </html>
