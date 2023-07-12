@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Приветствие</title>
+    <style>
+        body {
+            background-color: purple;
+        }
+
+        h1 {
+            text-align: center;
+            font-style: italic;
+            font-weight: bold;
+            border: 1px solid black;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+        }
+
+        #greeting {
+            text-align: center;
+            border: 2px solid black;
+            font-size: 2rem;
+            color: white;
+        }
+    </style>
+    <script>
+        function greetUser() {
+            var name = prompt("Как тебя зовут?");
+            var greeting = "Привет " + name + "!";
+            document.getElementById("greeting").innerText = greeting;
+        }
+    </script>
+</head>
+<body>
+    <h1>Приветствие</h1>
+    <button onclick="greetUser()">Поприветствовать</button>
+    <p id="greeting"></p>
+</body>
+</html>
