@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chat Page</title>
+    <style>
+        body {
+            background-color: lavenderblush;
+            font-family: "Times New Roman", sans-serif;
+        }
+        
+        #chat {
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+            overflow: auto;
+            background-color: lightgreen;
+        }
+
+        #message {
+            width: 300px;
+            height: 30px;
+            font-size: 1.5em;
+        }
+
+        #username {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chat">
+    </div>
+    <input type="text" id="username" placeholder="Username">
+    <input type="text" id="message" placeholder="Message">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function sendMessage() {
+            var username = document.getElementById("username").value;
+            var message = document.getElementById("message").value;
+
+            console.log(username + ": " + message);
+
+            var chat = document.getElementById("chat");
+            var newMessage = document.createElement("p");
+            newMessage.innerText = username + ": " + message;
+            chat.appendChild(newMessage);
+
+            document.getElementById("message").value = "";
+        }
+    </script>
+</body>
+
+</html>
